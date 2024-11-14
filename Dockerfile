@@ -6,12 +6,11 @@ WORKDIR /home/node/app
 
 COPY package*.json ./
 
-USER node
-
 RUN npm install
 
 COPY --chown=node:node . .
 
 EXPOSE 3001
+USER node
 
 CMD [ "npm", "start" ]
