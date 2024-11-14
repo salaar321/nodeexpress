@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: node-js-k8s
-          image: salaar123/nodeexpresshelloworld:v2
+          image: shyam.azurecr.io/nodeexpresshelloworld:v5
 # Image that will be used to containers in the cluster
           imagePullPolicy: IfNotPresent
           ports:
@@ -33,4 +33,4 @@ spec:
       port: 80 # The port that the service is running on in the cluster
       targetPort: 3001 # The port exposed by the service
       nodePort: 30033
-  type: NodePort # type of the service.
+  type: LoadBalancer # type of the service.
